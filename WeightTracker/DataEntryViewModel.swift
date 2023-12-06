@@ -19,13 +19,13 @@ final class DataEntryViewModel: ObservableObject {
         bodyMassType = .quantityType(forIdentifier: .bodyMass)
     }
     
-    func logWeight() {
+    func logWeight(_ weight: Double, unit: HKUnit) {
         guard let healthStore else {
             print("Health Data not available")
             return
         }
 
-        let quantity = HKQuantity(unit: .pound(), doubleValue: 150.1)
+        let quantity = HKQuantity(unit: unit, doubleValue: weight)
         let sample = HKQuantitySample(type: bodyMassType, quantity: quantity, start: .now, end: .now)
         
         healthStore.save(sample) { (success, error) in
