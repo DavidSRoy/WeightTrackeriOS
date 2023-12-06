@@ -21,7 +21,7 @@ struct WeightTrackerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            DataEntryView()
+            MainView()
         }
     }
     
