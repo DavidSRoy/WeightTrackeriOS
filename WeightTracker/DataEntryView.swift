@@ -9,28 +9,24 @@ import SwiftUI
 import HealthKit
 
 struct DataEntryView: View {
+
     @Environment(\.dismiss) private var dismiss
-    
     @StateObject private var viewModel = DataEntryViewModel()
-    
-    @State private var weight = ""
-    @State private var unit: HKUnit = .pound()
-    
+
     var body: some View {
         NavigationView {
             VStack {
-                WeightInputField(weight: weight, unit: unit)
+                WeightInputField(viewModel: viewModel)
                 
                 Button {
-                    if let weight = Double(weight) {
-                        viewModel.logWeight(weight, unit: unit)
-                    } else {
-                        // error
-                        print("Invalid Weight Entry; weight is not a double: received value: \(weight)")
-                    }
+                    viewModel.logWeight()
                 } label: {
                     Text("Log Weight")
                 }
+                .padding()
+                .background(.blue)
+                .foregroundColor(.white)
+                .clipShape(.capsule)
             }
             .navigationBarTitle("Enter Weight")
             .navigationBarItems(trailing:
@@ -39,9 +35,7 @@ struct DataEntryView: View {
             })
             .padding()
         }
-
     }
-    
 }
 
 #Preview {

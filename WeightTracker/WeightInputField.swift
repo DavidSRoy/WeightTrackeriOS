@@ -11,17 +11,26 @@ import SwiftUI
 import HealthKit
 
 struct WeightInputField: View {
-    @State var weight: String
-    @State var unit: HKUnit
-    
+    enum FocusField: Hashable {
+        case weightField
+    }
+
+    @ObservedObject var viewModel: DataEntryViewModel
+    @FocusState private var focusedField: FocusField?
+
     var body: some View {
         VStack {
             HStack {
-                TextField("Weight", text: $weight)
+                TextField("Weight", text: $viewModel.weight)
                     .keyboardType(.decimalPad)
                     .font(.system(size: 30))
+                    .focused($focusedField, equals: .weightField)
+                    .onAppear {
+                        self.focusedField = .weightField
+                    }
+
                 Spacer()
-                Picker("Units", selection: $unit) {
+                Picker("Units", selection: $viewModel.unit) {
                     Text("Pounds (lb)").tag(HKUnit.pound())
                     Text("Kilograms (kg)").tag(HKUnit.gramUnit(with: .kilo))
                 }
@@ -33,13 +42,13 @@ struct WeightInputField: View {
         .padding(.all)
     }
     
-    private let steelGray = Color(white: 0.9)
+    private let gray = Color(white: 0.9)
     var border: some View {
         RoundedRectangle(cornerRadius: 15)
-            .fill(steelGray)
+            .fill(gray)
     }
 }
 
 #Preview {
-    WeightInputField(weight: "", unit: .pound())
+    WeightInputField(viewModel: DataEntryViewModel())
 }

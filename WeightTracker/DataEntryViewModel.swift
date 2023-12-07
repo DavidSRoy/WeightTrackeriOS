@@ -10,6 +10,9 @@ import HealthKit
 
 final class DataEntryViewModel: ObservableObject {
     
+    var weight: String
+    var unit: HKUnit
+    
     private let healthStore: HKHealthStore?
     
     private let bodyMassType: HKQuantityType!
@@ -17,9 +20,15 @@ final class DataEntryViewModel: ObservableObject {
     init(healthStore: HKHealthStore? = WeightTrackerApp.healthStore) {
         self.healthStore = healthStore
         bodyMassType = .quantityType(forIdentifier: .bodyMass)
+        weight = ""
+        unit = .pound()
     }
     
-    func logWeight(_ weight: Double, unit: HKUnit) {
+    func logWeight() {
+        guard let weight = Double(weight) else {
+            print("Cannot log weight: weight input is not a Double")
+            return
+        }
         guard let healthStore else {
             print("Health Data not available")
             return

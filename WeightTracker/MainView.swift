@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State var showDataEntrySheet = false
-    
+
     var body: some View {
         VStack {
             Button {
