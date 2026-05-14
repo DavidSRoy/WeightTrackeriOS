@@ -23,7 +23,7 @@ struct MainView: View {
             .navigationTitle("Weight Tracker")
             .onAppear { healthKitService.fetchEntries() }
             .sheet(isPresented: $showLogs) {
-                Text("Logs coming soon")
+                WeightHistoryView(displayUnit: displayUnit)
             }
         }
     }
