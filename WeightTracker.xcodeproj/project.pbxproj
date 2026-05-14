@@ -19,6 +19,7 @@
 		0215BC6A2B2136FE00EF7F68 /* WeightInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC692B2136FE00EF7F68 /* WeightInputField.swift */; };
 		AA220001AA220001AA220001 /* WeightEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AA110001AA110001 /* WeightEntry.swift */; };
 		AA220002AA220002AA220002 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110002AA110002AA110002 /* HealthKitService.swift */; };
+		AA220003AA220003AA220003 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110003AA110003AA110003 /* WeightChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0215BC692B2136FE00EF7F68 /* WeightInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightInputField.swift; sourceTree = "<group>"; };
 		AA110001AA110001AA110001 /* WeightEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntry.swift; sourceTree = "<group>"; };
 		AA110002AA110002AA110002 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
+		AA110003AA110003AA110003 /* WeightChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				0215BC692B2136FE00EF7F68 /* WeightInputField.swift */,
 				AA110001AA110001AA110001 /* WeightEntry.swift */,
 				AA110002AA110002AA110002 /* HealthKitService.swift */,
+				AA110003AA110003AA110003 /* WeightChartView.swift */,
 			);
 			path = WeightTracker;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				0215BC662B21132400EF7F68 /* DataEntryViewModel.swift in Sources */,
 				AA220001AA220001AA220001 /* WeightEntry.swift in Sources */,
 				AA220002AA220002AA220002 /* HealthKitService.swift in Sources */,
+				AA220003AA220003AA220003 /* WeightChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

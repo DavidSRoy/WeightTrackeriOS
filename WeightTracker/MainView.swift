@@ -1,11 +1,31 @@
 import SwiftUI
+import HealthKit
 
 struct MainView: View {
     @EnvironmentObject private var healthKitService: HealthKitService
-    @State private var showDataEntrySheet = false
+    @State private var showLogs = false
+    @State private var displayUnit: HKUnit = .pound()
 
     var body: some View {
-        DataEntryView(healthKitService: healthKitService)
+        NavigationView {
+            ScrollView {
+                VStack(spacing: 24) {
+                    WeightChartView(entries: healthKitService.entries, unit: displayUnit)
+
+                    DataEntryView(healthKitService: healthKitService, displayUnit: $displayUnit)
+
+                    Button("View Logs") {
+                        showLogs = true
+                    }
+                    .padding(.bottom)
+                }
+            }
+            .navigationTitle("Weight Tracker")
+            .onAppear { healthKitService.fetchEntries() }
+            .sheet(isPresented: $showLogs) {
+                Text("Logs coming soon")
+            }
+        }
     }
 }
 

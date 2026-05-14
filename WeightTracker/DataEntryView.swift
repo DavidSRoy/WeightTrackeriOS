@@ -1,38 +1,42 @@
 import SwiftUI
+import HealthKit
 
 struct DataEntryView: View {
-    @Environment(\.dismiss) private var dismiss
+    @Binding var displayUnit: HKUnit
     @StateObject private var viewModel: DataEntryViewModel
 
-    init(healthKitService: HealthKitService) {
-        _viewModel = StateObject(wrappedValue: DataEntryViewModel(healthKitService: healthKitService))
+    init(healthKitService: HealthKitService, displayUnit: Binding<HKUnit>) {
+        _displayUnit = displayUnit
+        _viewModel = StateObject(wrappedValue: DataEntryViewModel(
+            healthKitService: healthKitService,
+            initialUnit: displayUnit.wrappedValue
+        ))
     }
 
     var body: some View {
-        NavigationView {
-            VStack {
-                WeightInputField(viewModel: viewModel)
+        VStack {
+            WeightInputField(viewModel: viewModel)
 
-                Button {
-                    viewModel.logWeight()
-                } label: {
-                    Text("Log Weight")
-                }
-                .padding()
-                .background(.blue)
-                .foregroundColor(.white)
-                .clipShape(.capsule)
+            Button {
+                viewModel.logWeight()
+            } label: {
+                Text("Log Weight")
             }
-            .navigationBarTitle("Enter Weight")
-            .navigationBarItems(trailing:
-                Button("Done") {
-                    dismiss()
-                })
             .padding()
+            .background(.blue)
+            .foregroundColor(.white)
+            .clipShape(.capsule)
+        }
+        .padding()
+        .onChange(of: viewModel.unit) { _, newUnit in
+            displayUnit = newUnit
         }
     }
 }
 
 #Preview {
-    DataEntryView(healthKitService: HealthKitService())
+    DataEntryView(
+        healthKitService: HealthKitService(),
+        displayUnit: .constant(.pound())
+    )
 }

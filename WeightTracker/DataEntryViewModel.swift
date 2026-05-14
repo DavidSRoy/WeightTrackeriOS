@@ -7,8 +7,9 @@ final class DataEntryViewModel: ObservableObject {
 
     private let healthKitService: HealthKitService
 
-    init(healthKitService: HealthKitService) {
+    init(healthKitService: HealthKitService, initialUnit: HKUnit = .pound()) {
         self.healthKitService = healthKitService
+        self.unit = initialUnit
     }
 
     func logWeight() {
