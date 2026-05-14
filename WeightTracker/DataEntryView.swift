@@ -1,23 +1,18 @@
-//
-//  DataEntryView.swift
-//  WeightTracker
-//
-//  Created by David Roy on 12/6/23.
-//
-
 import SwiftUI
-import HealthKit
 
 struct DataEntryView: View {
-
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var viewModel = DataEntryViewModel()
+    @StateObject private var viewModel: DataEntryViewModel
+
+    init(healthKitService: HealthKitService) {
+        _viewModel = StateObject(wrappedValue: DataEntryViewModel(healthKitService: healthKitService))
+    }
 
     var body: some View {
         NavigationView {
             VStack {
                 WeightInputField(viewModel: viewModel)
-                
+
                 Button {
                     viewModel.logWeight()
                 } label: {
@@ -32,12 +27,12 @@ struct DataEntryView: View {
             .navigationBarItems(trailing:
                 Button("Done") {
                     dismiss()
-            })
+                })
             .padding()
         }
     }
 }
 
 #Preview {
-    DataEntryView()
+    DataEntryView(healthKitService: HealthKitService())
 }

@@ -50,5 +50,5 @@ struct WeightInputField: View {
 }
 
 #Preview {
-    WeightInputField(viewModel: DataEntryViewModel())
+    WeightInputField(viewModel: DataEntryViewModel(healthKitService: HealthKitService()))
 }

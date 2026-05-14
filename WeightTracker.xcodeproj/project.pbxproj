@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0215BC382B210F6500EF7F68 /* WeightTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC372B210F6500EF7F68 /* WeightTrackerApp.swift */; };
-		0215BC3A2B210F6500EF7F68 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC392B210F6500EF7F68 /* ContentView.swift */; };
+		0215BC3A2B210F6500EF7F68 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC392B210F6500EF7F68 /* MainView.swift */; };
 		0215BC3C2B210F6800EF7F68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0215BC3B2B210F6800EF7F68 /* Assets.xcassets */; };
 		0215BC402B210F6800EF7F68 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0215BC3F2B210F6800EF7F68 /* Preview Assets.xcassets */; };
 		0215BC4A2B210F6900EF7F68 /* WeightTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC492B210F6900EF7F68 /* WeightTrackerTests.swift */; };
 		0215BC542B210F6900EF7F68 /* WeightTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC532B210F6900EF7F68 /* WeightTrackerUITests.swift */; };
 		0215BC562B210F6900EF7F68 /* WeightTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC552B210F6900EF7F68 /* WeightTrackerUITestsLaunchTests.swift */; };
+		0215BC642B21131300EF7F68 /* DataEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC632B21131300EF7F68 /* DataEntryView.swift */; };
+		0215BC662B21132400EF7F68 /* DataEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC652B21132400EF7F68 /* DataEntryViewModel.swift */; };
+		0215BC6A2B2136FE00EF7F68 /* WeightInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0215BC692B2136FE00EF7F68 /* WeightInputField.swift */; };
+		AA220001AA220001AA220001 /* WeightEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110001AA110001AA110001 /* WeightEntry.swift */; };
+		AA220002AA220002AA220002 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110002AA110002AA110002 /* HealthKitService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		0215BC342B210F6500EF7F68 /* WeightTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0215BC372B210F6500EF7F68 /* WeightTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrackerApp.swift; sourceTree = "<group>"; };
-		0215BC392B210F6500EF7F68 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0215BC392B210F6500EF7F68 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0215BC3B2B210F6800EF7F68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0215BC3D2B210F6800EF7F68 /* WeightTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeightTracker.entitlements; sourceTree = "<group>"; };
 		0215BC3F2B210F6800EF7F68 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +50,11 @@
 		0215BC4F2B210F6900EF7F68 /* WeightTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeightTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0215BC532B210F6900EF7F68 /* WeightTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrackerUITests.swift; sourceTree = "<group>"; };
 		0215BC552B210F6900EF7F68 /* WeightTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0215BC632B21131300EF7F68 /* DataEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryView.swift; sourceTree = "<group>"; };
+		0215BC652B21132400EF7F68 /* DataEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntryViewModel.swift; sourceTree = "<group>"; };
+		0215BC692B2136FE00EF7F68 /* WeightInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightInputField.swift; sourceTree = "<group>"; };
+		AA110001AA110001AA110001 /* WeightEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightEntry.swift; sourceTree = "<group>"; };
+		AA110002AA110002AA110002 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				0215BC372B210F6500EF7F68 /* WeightTrackerApp.swift */,
-				0215BC392B210F6500EF7F68 /* ContentView.swift */,
+				0215BC392B210F6500EF7F68 /* MainView.swift */,
 				0215BC3B2B210F6800EF7F68 /* Assets.xcassets */,
 				0215BC3D2B210F6800EF7F68 /* WeightTracker.entitlements */,
 				0215BC3E2B210F6800EF7F68 /* Preview Content */,
+				0215BC632B21131300EF7F68 /* DataEntryView.swift */,
+				0215BC652B21132400EF7F68 /* DataEntryViewModel.swift */,
+				0215BC692B2136FE00EF7F68 /* WeightInputField.swift */,
+				AA110001AA110001AA110001 /* WeightEntry.swift */,
+				AA110002AA110002AA110002 /* HealthKitService.swift */,
 			);
 			path = WeightTracker;
 			sourceTree = "<group>";
@@ -259,8 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0215BC3A2B210F6500EF7F68 /* ContentView.swift in Sources */,
+				0215BC3A2B210F6500EF7F68 /* MainView.swift in Sources */,
+				0215BC642B21131300EF7F68 /* DataEntryView.swift in Sources */,
 				0215BC382B210F6500EF7F68 /* WeightTrackerApp.swift in Sources */,
+				0215BC6A2B2136FE00EF7F68 /* WeightInputField.swift in Sources */,
+				0215BC662B21132400EF7F68 /* DataEntryViewModel.swift in Sources */,
+				AA220001AA220001AA220001 /* WeightEntry.swift in Sources */,
+				AA220002AA220002AA220002 /* HealthKitService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +369,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow WeightTracker to access weight samples from Health";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Allow WeightTracker to add weight samples to Health";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,6 +426,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow WeightTracker to access weight samples from Health";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Allow WeightTracker to add weight samples to Health";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
