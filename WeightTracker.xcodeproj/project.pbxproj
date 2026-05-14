@@ -21,6 +21,7 @@
 		AA220002AA220002AA220002 /* HealthKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110002AA110002AA110002 /* HealthKitService.swift */; };
 		AA220003AA220003AA220003 /* WeightChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110003AA110003AA110003 /* WeightChartView.swift */; };
 		AA220004AA220004AA220004 /* WeightHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110004AA110004AA110004 /* WeightHistoryView.swift */; };
+		AA220005AA220005AA220005 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA110005AA110005AA110005 /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		AA110002AA110002AA110002 /* HealthKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitService.swift; sourceTree = "<group>"; };
 		AA110003AA110003AA110003 /* WeightChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightChartView.swift; sourceTree = "<group>"; };
 		AA110004AA110004AA110004 /* WeightHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryView.swift; sourceTree = "<group>"; };
+		AA110005AA110005AA110005 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				AA110002AA110002AA110002 /* HealthKitService.swift */,
 				AA110003AA110003AA110003 /* WeightChartView.swift */,
 				AA110004AA110004AA110004 /* WeightHistoryView.swift */,
+				AA110005AA110005AA110005 /* NotificationService.swift */,
 			);
 			path = WeightTracker;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				AA220002AA220002AA220002 /* HealthKitService.swift in Sources */,
 				AA220003AA220003AA220003 /* WeightChartView.swift in Sources */,
 				AA220004AA220004AA220004 /* WeightHistoryView.swift in Sources */,
+				AA220005AA220005AA220005 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

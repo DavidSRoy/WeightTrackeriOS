@@ -5,6 +5,10 @@ struct WeightHistoryView: View {
     @EnvironmentObject private var healthKitService: HealthKitService
     @Environment(\.dismiss) private var dismiss
     let displayUnit: HKUnit
+    let notificationService: NotificationService
+
+    @AppStorage("reminderTimeInterval") private var reminderTimeInterval: Double = 8 * 3600
+    @State private var reminderTime: Date = Date()
 
     private var unitLabel: String { displayUnit == .pound() ? "lb" : "kg" }
 
@@ -17,13 +21,20 @@ struct WeightHistoryView: View {
 
     var body: some View {
         NavigationView {
-            Group {
-                if healthKitService.entries.isEmpty {
-                    Text("No entries yet")
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    List {
+            List {
+                Section("Daily Reminder") {
+                    DatePicker(
+                        "Remind me at",
+                        selection: $reminderTime,
+                        displayedComponents: .hourAndMinute
+                    )
+                }
+
+                Section("Entries") {
+                    if healthKitService.entries.isEmpty {
+                        Text("No entries yet")
+                            .foregroundStyle(.secondary)
+                    } else {
                         ForEach(healthKitService.entries) { entry in
                             HStack {
                                 Text(Self.dateFormatter.string(from: entry.date))
@@ -40,11 +51,18 @@ struct WeightHistoryView: View {
             }
             .navigationTitle("Log")
             .navigationBarItems(trailing: Button("Done") { dismiss() })
+            .onAppear {
+                reminderTime = Date(timeIntervalSinceReferenceDate: reminderTimeInterval)
+            }
+            .onChange(of: reminderTime) { _, newTime in
+                reminderTimeInterval = newTime.timeIntervalSinceReferenceDate
+                notificationService.scheduleDaily(at: newTime)
+            }
         }
     }
 }
 
 #Preview {
-    WeightHistoryView(displayUnit: .pound())
+    WeightHistoryView(displayUnit: .pound(), notificationService: NotificationService())
         .environmentObject(HealthKitService())
 }

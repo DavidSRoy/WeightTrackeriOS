@@ -3,6 +3,7 @@ import HealthKit
 
 struct MainView: View {
     @EnvironmentObject private var healthKitService: HealthKitService
+    let notificationService: NotificationService
     @State private var showLogs = false
     @State private var displayUnit: HKUnit = .pound()
 
@@ -23,13 +24,13 @@ struct MainView: View {
             .navigationTitle("Weight Tracker")
             .onAppear { healthKitService.fetchEntries() }
             .sheet(isPresented: $showLogs) {
-                WeightHistoryView(displayUnit: displayUnit)
+                WeightHistoryView(displayUnit: displayUnit, notificationService: notificationService)
             }
         }
     }
 }
 
 #Preview {
-    MainView()
+    MainView(notificationService: NotificationService())
         .environmentObject(HealthKitService())
 }
